@@ -30,12 +30,12 @@ class Vector
 	
 	def normalize
 	
-		d = (@x ** 2 + @y ** 2 + @z ** 2) ** 0.5
+		length = self.length
 		
-		if d != 0
-		  @x = @x / d
-		  @y = @y / d
-		  @z = @z / d
+		if length != 0
+		  @x = @x / length
+		  @y = @y / length
+		  @z = @z / length
 		end   
 	
 	end
@@ -54,6 +54,13 @@ class Vector
 		y = @z * another_vector.x - @x * another_vector.z
 		z = @x * another_vector.y - @y * another_vector.x
 		Vector.new(x, y, z)
+	
+	end
+	
+	
+	def perpendicular?(another_vector)
+	
+		self.dot_product(another_vector) == 0
 	
 	end
 	

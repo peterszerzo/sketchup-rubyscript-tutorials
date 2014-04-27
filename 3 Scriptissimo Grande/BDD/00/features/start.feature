@@ -1,7 +1,7 @@
-Feature: scaling a vector
+Feature: working with vectors
   As a user
-  I want to scale a vector
-  So I can work with the scaled vector
+  I want to perform vector operations
+  So I can work with vectors easily
   
   Scenario: scale example
     Given the vector is 3 4 0
@@ -31,3 +31,8 @@ Feature: scaling a vector
     Given the vector is 0 1 2
     And the other vector is 1 2 3
     Then their cross product should be -1 2 -1
+    
+  Scenario: perpendicular
+    Given the vector is 1 2 0
+    And the other vector is -2 1 0
+    Then they should be perpendicular

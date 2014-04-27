@@ -18,7 +18,7 @@ end
 
 When /^I scale by (.*)$/ do |factor|
 
-	@vector.scale(factor.to_i)
+	@vector.scale(factor.to_f)
 
 end
 
@@ -45,5 +45,11 @@ Then /^their cross product should be (.*) (.*) (.*)$/ do |x, y, z|
 
 	@test_vector = Vector.new(x.to_f, y.to_f, z.to_f)
 	@vector.cross_product(@vector2).should be_equals(@test_vector)
+
+end
+
+Then /^they should be perpendicular$/ do
+
+	@vector.should be_perpendicular(@vector2)
 
 end
