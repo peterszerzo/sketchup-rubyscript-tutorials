@@ -9,11 +9,11 @@ def draw
 	entities = model.entities
 
 	model.start_operation "Points"
-
-	# drawing goes here
+	
+	entities.add_point(Geom::Point3d.new(0, 0, 0))
 	
 	model.commit_operation
 
 end
 
-UI.menu("PlugIns").add_item("Scripto 00") { draw }
+UI.menu("PlugIns").add_item("Scripto 01") { draw }
